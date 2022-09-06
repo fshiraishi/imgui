@@ -1,10 +1,10 @@
 cmake_minimum_required (VERSION 3.10)
 
 set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/)
-add_library(IMGUI STATIC)
-set_property(TARGET IMGUI PROPERTY CXX_STANDARD 17)
+add_library(imgui STATIC)
+set_property(TARGET imgui PROPERTY CXX_STANDARD 17)
 
-target_sources(IMGUI
+target_sources(imgui
                 PRIVATE
                     ${IMGUI_DIR}/imgui_demo.cpp
                     ${IMGUI_DIR}/imgui_draw.cpp
@@ -13,7 +13,7 @@ target_sources(IMGUI
                     ${IMGUI_DIR}/imgui.cpp
 )
 
-target_include_directories( IMGUI
+target_include_directories( imgui
                             PUBLIC ${IMGUI_DIR}
                             PUBLIC ${IMGUI_DIR}/backends
                             PUBLIC ${SDL2_DIR}/include
